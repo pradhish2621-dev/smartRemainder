@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>SmartReminder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SmartReminder</h1>
+        <p>Never miss what matters.</p>
+    </header>
+
+    <main>
+
+        <section class="form-container">
+
+            <h2>Create Reminder</h2>
+
+            <input
+                type="text"
+                id="note"
+                placeholder="What do you want to remember?"
+            >
+
+            <input
+                type="datetime-local"
+                id="dateTime"
+            >
+
+            <select id="category">
+
+                <option value="Study">
+                    📚 Study
+                </option>
+
+                <option value="Work">
+                    💼 Work
+                </option>
+
+                <option value="Personal">
+                    👤 Personal
+                </option>
+
+                <option value="Important">
+                    ⭐ Important
+                </option>
+
+            </select>
+
+            <button onclick="addReminder()">
+                + Create Reminder
+            </button>
+
+            <button
+                class="notification-btn"
+                onclick="enableNotifications()">
+
+                🔔 Enable Device Notifications
+
+            </button>
+
+            <p id="notificationStatus">
+                Notifications not enabled
+            </p>
+
+        </section>
+
+
+        <section class="reminders-section">
+
+            <div class="section-header">
+
+                <h2>Your Reminders</h2>
+
+                <span id="count">
+                    0 reminders
+                </span>
+
+            </div>
+
+            <div id="reminderList">
+
+                <p class="empty">
+                    No reminders yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ALARM POPUP -->
+
+    <div
+        id="alarmBox"
+        class="alarm-overlay"
+        style="display:none;">
+
+        <div class="alarm-card">
+
+            <div class="alarm-icon">
+                🔔
+            </div>
+
+            <h2>Reminder!</h2>
+
+            <p id="alarmText"></p>
+
+            <div class="alarm-buttons">
+
+                <button
+                    class="done"
+                    onclick="stopAlarm()">
+
+                    ✓ Done
+
+                </button>
+
+                <button
+                    class="snooze"
+                    onclick="snoozeAlarm()">
+
+                    😴 Snooze 10 min
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
